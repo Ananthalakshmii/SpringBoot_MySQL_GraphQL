@@ -1,0 +1,56 @@
+https://www.bezkoder.com/spring-boot-graphql-mysql-jpa/
+
+1) mutation {
+  createAuthor(
+    name: "bezkoder",
+    age: 27) {
+      id name
+  }
+}
+
+2) mutation {
+  createTutorial (
+    title: "Tutorial #1",
+    description: "Description for Tut#1"
+    author: 1)
+    {
+      id title author { name }
+    }
+}
+
+3){
+  findAllAuthors{
+    id
+    name
+    age
+  }
+}
+
+4) {
+  findAllTutorials{
+    id
+    title
+    description
+    author{
+      id
+      name
+    }
+  }
+}
+
+5)mutation {
+  updateTutorial (
+    id: 2
+    description: "updated Desc Tut#2")
+    {
+      id title description author { name }
+    }
+}
+
+6)mutation {
+  deleteTutorial(id: 1)
+}
+
+7){
+  countTutorials
+}
